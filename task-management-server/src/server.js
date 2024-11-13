@@ -18,14 +18,6 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-app.use((req, res, next) => {
-    console.log('Request Method:', req.method);
-    console.log('Request URL:', req.url);
-    console.log('Request Headers:', req.headers);
-    console.log('Request Body:', req.body);  // You might need body-parser for req.body
-    next();  // Pass to the next middleware or route handler
-});
-
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use('/api/users', userRoutes);
