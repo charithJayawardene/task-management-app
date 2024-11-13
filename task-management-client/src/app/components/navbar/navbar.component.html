@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <span>Task Management App</span>
+
+    <span class="spacer"></span>
+
+    <a mat-button routerLink="/home" routerLinkActive="active-link">Home</a>
+    <a mat-button routerLink="/tasks" routerLinkActive="active-link">Tasks</a>
+    <a mat-button routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
+
+    <button mat-button color="warn" (click)="logout()">Logout</button>
+</mat-toolbar>

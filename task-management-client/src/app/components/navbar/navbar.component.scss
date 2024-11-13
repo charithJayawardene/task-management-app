@@ -1,0 +1,14 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+a.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+}

@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Task Details</h2>
+<div mat-dialog-content>
+    <p><strong>Title:</strong> {{ data.task.title }}</p>
+    <p><strong>Description:</strong> {{ data.task.description }}</p>
+    <p><strong>Status:</strong> {{ data.task.status }}</p>
+    <p><strong>Due Date:</strong> {{ data.task.due_date | date }}</p>
+    <p><strong>Priority:</strong> {{ data.task.priority }}</p>
+    <p><strong>Assigned User:</strong> {{ data.log_name ? data.log_name : "Not Assigned"}}</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+</div>

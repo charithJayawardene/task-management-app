@@ -1,0 +1,58 @@
+<div class="task-list-header">
+    <button mat-button color="primary" (click)="openAddTaskDialog()">
+        <mat-icon>add</mat-icon> Add Task </button>
+</div>
+
+<div>
+    <mat-form-field appearance="outline">
+        <mat-label>Filter by Status</mat-label>
+        <mat-select placeholder="Filter by Status" [(ngModel)]="statusFilter" (selectionChange)="applyFilter()">
+            <mat-option value="">All</mat-option>
+            <mat-option value="Completed">Completed</mat-option>
+            <mat-option value="In-progress">In Progress</mat-option>
+            <mat-option value="Todo">To Do</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Filter by Priority</mat-label>
+        <mat-select placeholder="Filter by Priority" [(ngModel)]="priorityFilter" (selectionChange)="applyFilter()">
+            <mat-option value="">All</mat-option>
+            <mat-option value="High">High</mat-option>
+            <mat-option value="Medium">Medium</mat-option>
+            <mat-option value="Low">Low</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Sort By</mat-label>
+        <mat-select placeholder="Sort By" [(ngModel)]="sortOption" (selectionChange)="applySorting()">
+            <mat-option value="">None</mat-option>
+            <mat-option value="dueDateAsc">Due Date (Ascending)</mat-option>
+            <mat-option value="dueDateDesc">Due Date (Descending)</mat-option>
+            <mat-option value="priorityAsc">Priority (Ascending)</mat-option>
+            <mat-option value="priorityDesc">Priority (Descending)</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div class="task-list">
+    <mat-card *ngFor="let task of filteredTasks" class="task-card">
+        <mat-card-header>
+            <mat-card-title>{{ task.title }}</mat-card-title>
+            <mat-card-subtitle>{{ task.priority }} | Due Date: {{ task.due_date | date }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <p>{{ task.description }}</p>
+            <p><strong>Status:</strong> {{ task.status }}</p>
+            <p><strong>Assign To:</strong> {{ task.assignName || 'Unassigned' }}</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-button (click)="openEditDialog(task)">Edit</button>
+            <button mat-button color="warn" (click)="deleteTask(task.id)">Delete</button>
+            <button mat-button (click)="viewAudit(task.id)">View Audit</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

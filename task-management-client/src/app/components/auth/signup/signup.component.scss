@@ -1,0 +1,44 @@
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.signup-card {
+    max-width: 450px;
+    padding: 36px;
+}
+
+mat-card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3f51b5;
+    margin-bottom: 20px;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.auth-switch a {
+    color: #3f51b5;
+    font-weight: bold;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
